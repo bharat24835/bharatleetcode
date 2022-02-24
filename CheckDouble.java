@@ -15,10 +15,11 @@ public class CheckDouble {
         boolean ans = false;
         for(int i=0; i<a.length; i++)
         {
-            if(a[i]==0 && count==0)
+            if(a[i]==0 && count==0) // 0 ka panga hatane  k liye count liya [0,0] & [0] 
             {
                 count ++;
                 continue;
+                
             }
             else
             {
