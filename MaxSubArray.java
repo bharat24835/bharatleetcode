@@ -19,6 +19,7 @@ public class MaxSubArray {
     public  static  void MSubArray(int []a, int sum, int max)
     {ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < a.length; i++) {
+            // kadane's algorithm
             sum= sum + a[i];
             max= Math.max(max , sum );
             if(sum <0)
