@@ -1,36 +1,46 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MissingNumber {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("We have enteres the array:");
-        System.out.println("Enter the ordre of array");
-        int n= in.nextInt();
-        int []a= new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i]= in.nextInt();
-        }
-        System.out.println(Arrays.toString(a));
-        Missing(a);
-
-    }
-    public static void Missing(int []a)
-    {
-        Arrays.sort(a);
-        int start=0;
-        int end= a.length-1;
-        while(start <= end)
+        int []a= {1,2,3,4,6};
+        System.out.println(" We wish to find the missing numebr from the array: ");
+        int i=0;
+        while (i<a.length)
         {
-            int mid = start + (end - start)/2;
-            if(a[mid]==mid)
-                start= mid+1;
+            int correctI = a[i];
+            if(  a[i] <a.length && a[i] != i+1)
+            {
+                // swapping between index i ,a[i]
+                swap(a,a[i],i+1);
+            }
             else
-                end = mid-1;
-
+                i++;
         }
-        System.out.println("The missing number is :" + (end+1));
+        System.out.println(" Search for the missing numebr");
+        // case:1 missing a numebr in range[1,n);
+        int miss = Missing(a);
+        System.out.println(" Missing elememt is : " + miss);
+
     }
+
+    private static int Missing(int[] a) {
+        for (int j = 0; j < a.length; j++) {
+            if(a[j]!=j+1)
+                return j+1;
+        }
+        // case 2: if n is missing from the array
+        // upar wala if(line 24) never hit
+        return a.length;
+    }
+
+    public static void swap(int[]a , int b, int c)
+    {
+        int temp = a[c];
+        a[c]= a[b];
+        a[b]= temp;
+    }
+
 }
