@@ -23,7 +23,7 @@ public class SearchInRSA {
                   found = BS(a,target,0,pivit);
           }
           else
-               found = BS(a,target,0,a.length-1);
+              found = BS(a,target,0,a.length-1);
 
         System.out.println(" We found the element at index : " + found);
     }

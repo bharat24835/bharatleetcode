@@ -1,4 +1,4 @@
-package com.company;
+    package com.company;
 
 import java.util.Scanner;
 
@@ -59,7 +59,7 @@ public class SearchInRSAWithDuplicates {
             else if (a[start] < a[mid] || a[start] == a[mid] && a[mid] > a[end])
                 // [2,3,4,5,6,7,1] && [2,2,2,2,2,2,6]
                 start= mid+1;
-            else
+            else // contain [7,1,2,3,4,5]
                 end = mid-1;
 
         }

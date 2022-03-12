@@ -3,6 +3,8 @@ package com.company;
 import java.util.Arrays;
 import java.util.Scanner;
 
+//import static jdk.internal.org.jline.utils.Colors.s;
+
 public class InsertionSort {
     public static void main(String[] args) {
         Scanner  in = new Scanner(System.in);
@@ -18,6 +20,7 @@ public class InsertionSort {
             }
         }
         System.out.println(Arrays.toString(a));
+        System.out.println(" ❤❤❤💕💕💕😁😉🎉🎂✔👱‍♂️👱‍♂️👱‍♂️👸🤴🤴🧨🥐 ");
     }
     public static void Swap(int[]a,int c, int b)
     {

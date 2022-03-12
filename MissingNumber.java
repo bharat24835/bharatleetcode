@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class MissingNumber {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int []a= {1,2,3,4,6};
+        int []a= {1,3,4};
         System.out.println(" We wish to find the missing numebr from the array: ");
         int i=0;
         while (i<a.length)
         {
-            int correctI = a[i];
-            if(  a[i] <a.length && a[i] != i+1)
+            int correctI = a[i]-1;
+            if(  a[i] <a.length && a[i] != i+1) // STATEMENT:1- for term n hit na kare
             {
                 // swapping between index i ,a[i]
                 swap(a,a[i],i+1);
