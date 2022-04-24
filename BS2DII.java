@@ -17,18 +17,19 @@ public class BS2DII {
         System.out.println(" Target Is : " + target);
         System.out.println(" We want to search in 2D array using ignoring rows method");
          int [] ssp = SearchSpace(a,target);
+         // we have to take total three items in array that show rowstart, rowend and mid column
          int rStart = ssp[0];
          int rEnd = ssp[1];
         System.out.println(" Checking whether the mid col has target element or not");
         int cMid = ssp[2];
-        int count =0;
+       // int count =0;
         if(a[rStart][cMid] == target)
         {
             System.out.println(" Found the element at index : [ "+ rStart+" , " + cMid+ " ]");
-            count=1;
+            //count=1;
         }
          else if(a[rEnd][cMid] == target)
-        { count=1;
+        { //count=1;
             System.out.println(" Found the element at index : [ "+ rEnd+" , " + cMid+" ]");
         }
          else
@@ -45,6 +46,8 @@ public class BS2DII {
         int cEnd = a[0].length-1;
         int cMid = cEnd/2;
         while( rStart < rEnd-1) // since we need two pair of rows
+            // and due to this rMid never goes to last row
+            // hence no index out of bond length  for (rMid+1) line 64:
         {
             int rMid = rStart + (rEnd - rStart)/2;
             if(a[rMid][cMid] > target)
@@ -74,12 +77,13 @@ public class BS2DII {
      static void SearchOperation(int[][]a,int target,int rStart,int rEnd ,int cMid)
     {
         int cMax =( a[0].length-1);
+
         System.out.println(" cMax " + cMax);
         int[]b = new int[2];
         if(a[rStart][cMid] > target) // left upper row
         {
             System.out.println(" I st part");
-            b = BS(a,target,0,cMid-1,rStart);
+            b = BS(a,target,0,cMid-1,rStart);// rStart denotes which row
         }
          if(a[rStart][cMid] <  target && target < a[rEnd][0])// right upper row
         {
